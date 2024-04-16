@@ -15,6 +15,18 @@ Feel free to post a Pull Request to continue enhancing this project.
 
 In essence, Odoocker isn't just another tool, it's a philosophy. So, whether you’re a seasoned Odoo veteran or just starting your journey, Odoocker is here to make your journey easier.
 
+### note for nabeel:
+```
+git clone git@github.com:odoocker/odoocker.git
+cp docker-compose.override.local.yml docker-compose.override.yml
+
+echo '127.0.0.1 erp.odoocker.test' | sudo tee -a /etc/hosts
+echo '127.0.0.1 pgadmin.odoocker.test' | sudo tee -a /etc/hosts
+
+docker-compose down && git pull && docker-compose up -d --build && docker-compose logs -f --tail 2000 odoo
+
+```
+
 ## Contents
 
 - [Quick Setup Guide](#quick-setup-guide)
